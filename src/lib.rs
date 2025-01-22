@@ -21,6 +21,7 @@ impl Database {
         let file = OpenOptions::new()
             .read(true)
             .write(true)
+            .create(true)
             .open(&file_path)
             .map_err(|e| Error::Io(e))?;
 
