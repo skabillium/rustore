@@ -38,15 +38,15 @@ fn main() {
                                 let key = tokens[1];
                                 let value = tokens[2];
                                 db.put(key, value).unwrap();
-                                stream.write("OK".as_bytes()).unwrap();
+                                stream.write("OK\n".as_bytes()).unwrap();
                             }
                             "delete" => {
                                 let key = tokens[1];
                                 db.delete(key).unwrap();
-                                stream.write("OK".as_bytes()).unwrap();
+                                stream.write("OK\n".as_bytes()).unwrap();
                             }
                             _ => {
-                                stream.write("Invalid command".as_bytes()).unwrap();
+                                stream.write("Invalid command\n".as_bytes()).unwrap();
                             }
                         }
 
